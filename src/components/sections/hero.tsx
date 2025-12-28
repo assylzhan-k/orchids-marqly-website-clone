@@ -1,136 +1,131 @@
 import React from 'react';
 import Image from 'next/image';
 
-const Hero = () => {
+const HeroSection = () => {
   return (
     <section 
       id="hero" 
-      className="relative flex flex-col items-center pt-[24px] pb-[80px] overflow-hidden bg-white"
-      style={{ minHeight: '100vh' }}
+      className="relative flex flex-col items-center pt-[120px] pb-[80px] bg-[#F0F7FF] overflow-hidden"
+      style={{ borderRadius: '0 0 80px 80px' }}
     >
-      {/* Background Container for Rounded Light Blue Wash */}
-      <div className="absolute inset-x-[30px] top-[24px] bottom-0 bg-[#E9F5FF] rounded-[40px] -z-10 overflow-hidden">
-        {/* Grid Mesh Overlay */}
+      {/* Background Decorative Grid/Squares Effect */}
+      <div className="absolute inset-0 pointer-events-none opacity-40">
         <div 
-          className="absolute inset-0 opacity-[0.4]" 
-          style={{ 
-            backgroundImage: 'radial-gradient(#2996F5 0.5px, transparent 0.5px)', 
-            backgroundSize: '40px 40px' 
+          className="w-full h-full"
+          style={{
+            backgroundImage: `radial-gradient(#C6E4FF 0.5px, transparent 0.5px)`,
+            backgroundSize: '40px 40px'
           }}
         />
-        
-        {/* Decorative Ellipse Background */}
-        <div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#FFFFFF] rounded-full blur-[120px] opacity-60"
-        />
       </div>
 
-      {/* Floating Elements Container */}
-      <div className="absolute inset-0 pointer-events-none max-w-[1440px] mx-auto">
-        {/* Emoji: Crazy Face Top Left */}
-        <div className="absolute top-[180px] left-[15%] animate-bounce duration-[3000ms]">
-          <div className="flex items-center justify-center w-[54px] h-[54px] bg-white rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] text-2xl border border-[#E5E7EB]">
-            🤪
+      <div className="container relative z-10 flex flex-col items-center text-center">
+        {/* Floating Icons/Assets - Distributed around the hero content */}
+        {/* These elements use absolute positioning mimicking the screenshot layout */}
+        <div className="absolute left-[15%] top-[10%] drop-shadow-sm select-none animate-bounce" style={{ animationDuration: '4s' }}>
+          <div className="bg-white p-3 rounded-2xl border border-white shadow-lg flex items-center justify-center w-[54px] h-[54px]">
+            <span className="text-2xl">🤪</span>
+          </div>
+        </div>
+        <div className="absolute right-[10%] top-[40%] drop-shadow-sm select-none animate-bounce" style={{ animationDuration: '3.5s' }}>
+          <div className="bg-white p-3 rounded-2xl border border-white shadow-lg flex items-center justify-center w-[54px] h-[54px]">
+            <span className="text-2xl">🤪</span>
+          </div>
+        </div>
+        <div className="absolute left-[12%] top-[55%] drop-shadow-sm select-none animate-bounce" style={{ animationDuration: '4.5s' }}>
+          <div className="bg-white p-3 rounded-2xl border border-white shadow-lg flex items-center justify-center w-[54px] h-[54px]">
+            <span className="text-2xl">🥝</span>
+          </div>
+        </div>
+        <div className="absolute right-[15%] top-[10%] drop-shadow-sm select-none animate-bounce" style={{ animationDuration: '5s' }}>
+          <div className="bg-white p-3 rounded-2xl border border-white shadow-lg flex items-center justify-center w-[54px] h-[54px]">
+            <span className="text-2xl">👨🏻‍🦱</span>
           </div>
         </div>
 
-        {/* Emoji: Kiwi Mid Left */}
-        <div className="absolute top-[320px] left-[20%] animate-pulse">
-          <div className="flex items-center justify-center w-[48px] h-[48px] bg-white rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] text-xl border border-[#E5E7EB]">
-            🥝
-          </div>
-        </div>
-
-        {/* Emoji: Heart Eyes Top Right */}
-        <div className="absolute top-[150px] right-[18%] animate-bounce duration-[2500ms]">
-          <div className="flex items-center justify-center w-[52px] h-[52px] bg-white rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] text-2xl border border-[#E5E7EB]">
-            🤩
-          </div>
-        </div>
-
-        {/* Emoji: Brain Mid Left (Dashboard level) */}
-        <div className="absolute bottom-[28%] left-[10%] z-20">
-          <div className="text-[64px] drop-shadow-xl transform -rotate-12">
-            🧠
-          </div>
-        </div>
-
-        {/* Floating Folders */}
-        <div className="absolute top-[450px] left-[16%] -rotate-6">
-           <div className="w-[44px] h-[44px] bg-white rounded-xl shadow-lg flex items-center justify-center border border-[#E5E7EB]">
-              <div className="w-6 h-6 bg-[#A855F7] rounded-[4px] opacity-80" />
-           </div>
-        </div>
-
-        <div className="absolute top-[420px] right-[22%] rotate-12">
-           <div className="w-[48px] h-[48px] bg-white rounded-xl shadow-lg flex items-center justify-center border border-[#E5E7EB]">
-              <div className="w-7 h-7 bg-[#2996F5] rounded-[4px] opacity-80" />
-           </div>
-        </div>
-      </div>
-
-      {/* Hero Content */}
-      <div className="container relative z-10 flex flex-col items-center text-center mt-[100px]">
         {/* Badge */}
-        <div className="inline-flex items-center px-4 py-1.5 mb-8 bg-white border border-[#E5E7EB] rounded-full shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
-          <span className="text-[14px] font-semibold text-[#2996F5] tracking-tight">Introducing Marqly 3.0</span>
+        <div className="mb-6">
+          <span className="px-5 py-2 rounded-full border border-[#E5E7EB] bg-white text-[14px] font-semibold text-[#666666] tracking-tight backdrop-blur-sm">
+            Introducing Marqly 3.0
+          </span>
         </div>
 
-        {/* Title */}
-        <h1 className="font-display text-[48px] md:text-[72px] font-[800] text-[#333333] leading-[1.05] tracking-[-0.04em] max-w-[900px]">
-          Bookmark manager,<br />
-          <span className="text-[#2996F5]">revolutionized.</span>
+        {/* Headline */}
+        <h1 className="max-w-[900px] mb-6 tracking-[-0.04em] text-black">
+          Bookmark manager, <br />
+          <span className="text-gradient">revolutionized.</span>
         </h1>
 
-        {/* Subtitle */}
-        <p className="mt-8 text-[18px] md:text-[20px] text-[#666666] leading-[1.6] max-w-[640px] font-body">
+        {/* Subtext */}
+        <p className="max-w-[640px] mb-10 text-[20px] text-[#666666] font-normal leading-[1.6]">
           Easy-to-use, Marqly lets you save, customize, and manage all your bookmarks and texts online like a breeze.
         </p>
 
         {/* CTA Button */}
-        <div className="mt-10 flex flex-col items-center gap-4">
-          <a 
+        <div className="flex flex-col items-center gap-4 mb-4">
+          <a
             href="https://app.marqly.com/"
-            className="group flex items-center gap-2 px-8 py-4 bg-[#2996F5] text-white rounded-full text-[18px] font-semibold transition-all hover:scale-105 active:scale-95 shadow-[0_10px_20px_rgba(41,150,245,0.3)]"
+            className="bg-[#30A2FF] text-white px-8 py-4 rounded-full font-bold text-[18px] flex items-center gap-2 hover:bg-[#2092EF] transition-all transform hover:-translate-y-1 shadow-lg shadow-blue-200"
           >
-            Get Started for Free
-            <span className="transition-transform group-hover:translate-x-1">→</span>
+            Get Started for Free <span className="text-xl">→</span>
           </a>
           
           <div className="flex items-center gap-2 text-[#666666] text-[14px] font-medium opacity-80">
-            <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 6.5H15M15 6.5L9.5 1M15 6.5L9.5 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg 
+              width="16" 
+              height="16" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2.5" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+            >
+              <rect x="2" y="5" width="20" height="14" rx="2" ry="2" />
+              <line x1="2" y1="10" x2="22" y2="10" />
             </svg>
             No card required
           </div>
         </div>
-      </div>
 
-      {/* Dashboard Preview */}
-      <div className="container relative mt-[80px] z-10">
-        <div className="relative mx-auto max-w-[1080px]">
-          {/* Shadow behind image */}
-          <div className="absolute inset-0 bg-[#2996F5] opacity-10 blur-[100px] -z-10 rounded-[32px]" />
-          
-          {/* Floating Blue Folder Decoration */}
-          <div className="absolute -bottom-8 -right-8 w-[120px] h-[120px] z-20 pointer-events-none transform rotate-[15deg] hidden lg:block">
-            <div className="relative w-full h-full bg-[#56C5FF] rounded-[24px] shadow-2xl overflow-hidden">
-                <div className="absolute top-0 left-0 w-1/2 h-1/4 bg-[#2996F5] opacity-20" />
+        {/* Mockup Dashboard */}
+        <div className="relative mt-16 perspective-1000 w-full max-w-[1100px] mx-auto">
+          {/* Main Screenshot */}
+          <div 
+            className="relative z-20 overflow-hidden border-[1px] border-white/50 shadow-2xl rounded-[32px] bg-white"
+            style={{ 
+              boxShadow: '0 40px 100px -20px rgba(0,0,0,0.15)',
+              transform: 'rotateX(5deg)',
+              transformOrigin: 'top center'
+            }}
+          >
+            <Image
+              src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/68f767a9-f366-4f24-af37-949bee1eee0b-marqly-com/assets/images/nFMSMCY857T3dPRqBJmS9Eu7iA-1.jpg"
+              alt="Marqly Dashboard Mockup"
+              width={2160}
+              height={1536}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
+
+          {/* Floating Assets relative to the screen */}
+          <div className="absolute -left-12 -bottom-10 z-30 select-none hidden md:block animate-bounce" style={{ animationDuration: '6s' }}>
+            <div className="w-24 h-24 relative">
+              <span className="text-[64px]">🧠</span>
             </div>
           </div>
 
-          {/* Main Screenshot Container */}
-          <div className="bg-white rounded-[32px] p-2 shadow-[0_40px_80px_rgba(0,0,0,0.1)] border border-white/50 backdrop-blur-sm">
-            <div className="relative overflow-hidden rounded-[24px]">
-              <Image 
-                src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/68f767a9-f366-4f24-af37-949bee1eee0b-marqly-com/assets/images/nFMSMCY857T3dPRqBJmS9Eu7iA-1.jpg"
-                alt="Marqly Dashboard Preview"
-                width={2160}
-                height={1536}
-                priority
-                className="w-full h-auto object-cover"
-              />
+          <div className="absolute right-[5%] -bottom-4 z-30 select-none hidden md:block">
+            <div className="bg-[#30A2FF] w-[90px] h-[70px] rounded-xl shadow-xl flex items-center justify-center -rotate-12">
+               <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
+                 <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
+               </svg>
             </div>
+          </div>
+
+          <div className="absolute -right-8 top-[20%] z-10 select-none hidden md:block">
+             <div className="w-16 h-16 bg-[#70C1FF]/20 rounded-2xl backdrop-blur-md rotate-45 border border-white/30" />
           </div>
         </div>
       </div>
@@ -138,4 +133,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HeroSection;
