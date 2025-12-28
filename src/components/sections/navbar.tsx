@@ -3,71 +3,67 @@ import Image from 'next/image';
 
 const Navbar = () => {
   return (
-    <nav className="w-full h-[88px] flex items-center justify-center bg-white px-6 md:px-10 sticky top-0 z-50">
-      <div className="w-full max-w-[1360px] flex items-center justify-between">
-        {/* Left: Navigation Menu */}
-        <div className="flex items-center gap-2 md:gap-4 lg:gap-8">
-          <div className="flex items-center bg-[#F3F4FB] rounded-full p-1.5 px-2">
-            <a 
-              href="/" 
-              className="text-[14px] font-semibold text-[#000000] px-4 py-1.5 bg-white rounded-full shadow-sm"
-            >
-              Home
-            </a>
-            <div className="flex items-center">
-              <a 
-                href="/pricing" 
-                className="text-[14px] font-medium text-[#666666] px-4 py-1.5 hover:text-[#000000] transition-colors"
-              >
-                Pricing
-              </a>
-              <a 
-                href="/extension" 
-                className="text-[14px] font-medium text-[#666666] px-4 py-1.5 hover:text-[#000000] transition-colors"
-              >
-                Extension
-              </a>
-              <a 
-                href="/help" 
-                className="text-[14px] font-medium text-[#666666] px-4 py-1.5 hover:text-[#000000] transition-colors"
-              >
-                Help
-              </a>
-              <a 
-                href="/blog" 
-                className="text-[14px] font-medium text-[#666666] px-4 py-1.5 hover:text-[#000000] transition-colors"
-              >
-                Blog
-              </a>
-            </div>
-          </div>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#EBEEF0] h-[72px] flex items-center">
+      <div className="container mx-auto px-10 flex items-center justify-between h-full max-w-[1240px]">
+        {/* Left Section: Menu Items */}
+        <div className="flex items-center gap-1">
+          <a
+            href="/"
+            className="px-[11px] py-[6px] text-[16px] font-medium text-[#657786] transition-colors hover:text-black rounded-[10px]"
+          >
+            Home
+          </a>
+          <a
+            href="/Pricing"
+            className="px-[11px] py-[6px] text-[16px] font-medium text-[#657786] transition-colors hover:text-black rounded-[10px]"
+          >
+            Pricing
+          </a>
+          <a
+            href="/Extension"
+            className="px-[11px] py-[6px] text-[16px] font-medium text-[#657786] transition-colors hover:text-black rounded-[10px]"
+          >
+            Extension
+          </a>
+          <a
+            href="#"
+            className="px-[11px] py-[6px] text-[16px] font-medium text-[#657786] transition-colors hover:text-black rounded-[10px]"
+          >
+            Help
+          </a>
+          <a
+            href="/blog"
+            className="px-[11px] py-[6px] text-[16px] font-medium text-black bg-[#F4F4F7] transition-colors rounded-[10px]"
+          >
+            Blog
+          </a>
         </div>
 
         {/* Center: Logo */}
-        <div className="absolute left-1/2 -translate-x-1/2">
-          <a href="/" className="block">
-            <Image 
-              src="https://framerusercontent.com/images/hkZ7o9s2iJ5UbKZGZTPxMKTSQ.svg" 
-              alt="Marqly Logo" 
-              width={69} 
-              height={32} 
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <a href="/" className="flex items-center">
+            <Image
+              src="https://framerusercontent.com/images/hkZ7o9s2iJ5UbKZGZTPxMKTSQ.svg"
+              alt="Marqly"
+              width={69}
+              height={32}
               priority
-              className="h-8 w-auto"
+              className="object-contain"
             />
           </a>
         </div>
 
-        {/* Right: CTA Buttons */}
+        {/* Right Section: CTAs */}
         <div className="flex items-center gap-3">
-          <a 
-            href="https://chrome.google.com/webstore/detail/marqly" 
-            className="hidden md:flex items-center justify-center border border-[#E5E7EB] rounded-full px-6 py-2.5 text-[14px] font-semibold text-[#000000] hover:bg-gray-50 transition-all"
+          <a
+            href="https://chrome.google.com/webstore/detail/marqly/kcadneobjofkppmekgadodnaojoehemc/"
+            className="px-5 py-[10px] text-[15px] font-semibold text-black border border-[#EBEEF0] rounded-[8px] transition-colors hover:bg-[#F7F9FB]"
           >
             Install Extension
           </a>
-          <a 
-            href="https://app.marqly.com" 
-            className="flex items-center justify-center bg-[#30A2FF] text-white rounded-full px-6 py-2.5 text-[14px] font-semibold hover:bg-[#2581cc] transition-all shadow-[0_4px_14px_0_rgba(48,162,255,0.39)]"
+          <a
+            href="https://app.marqly.com"
+            className="px-5 py-[10px] text-[15px] font-semibold text-white bg-[#1DA1F2] rounded-[8px] transition-opacity hover:opacity-90 shadow-sm"
           >
             Sign in
           </a>
