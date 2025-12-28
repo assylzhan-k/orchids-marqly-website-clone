@@ -1,15 +1,11 @@
 import React from 'react';
 
-/**
- * NotFound component for the "Page Not Found" screen.
- * Replicates the minimalist Framer-style 404 page layout.
- */
-const NotFound = () => {
+const NotFoundSection: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white p-5">
-      <main className="flex flex-col items-center justify-center max-w-[240px] w-full text-center">
+    <div className="flex flex-col items-center justify-center min-h-screen w-full bg-white px-5 overflow-hidden">
+      <main className="flex flex-col items-center justify-center text-center max-w-[400px] w-full gap-4">
         {/* Logo Section */}
-        <div className="mb-5">
+        <div className="logo-wrapper flex items-center justify-center mb-2">
           <svg 
             width="14" 
             height="21" 
@@ -17,42 +13,36 @@ const NotFound = () => {
             fill="none" 
             xmlns="http://www.w3.org/2000/svg"
             className="text-[#333333]"
+            aria-hidden="true"
           >
             <path 
-              d="M0 0H14V7H7L0 14V0Z" 
-              fill="currentColor"
-            />
-            <path 
-              d="M0 14L7 7H14V21L0 14Z" 
+              d="M0 0H14V7H7L7 14H14V21H0V14H7L7 7H0V0Z" 
               fill="currentColor"
             />
           </svg>
         </div>
 
         {/* Heading Section */}
-        <h1 className="text-[12px] font-semibold text-[#333333] mb-[10px] leading-tight font-sans">
+        <h1 className="text-[18px] font-semibold text-[#333333] leading-[1.4] m-0">
           Page Not Found
         </h1>
 
         {/* Description Section */}
-        <div className="text-[12px] leading-[1.5] text-[#888888] mb-5 font-sans">
+        <div className="max-w-[320px] text-[14px] font-normal text-[#888888] leading-[1.6]">
           The page you are looking for does not exist or may have been moved.
         </div>
 
-        {/* Action Button Section */}
+        {/* Action Button */}
         <a 
           href="/" 
           role="button" 
-          className="inline-flex items-center justify-center bg-[#0099ff] text-white text-[12px] font-medium h-[30px] px-3 rounded-lg transition-colors hover:bg-[#0088ee] font-sans"
+          className="inline-flex items-center justify-center min-w-[124px] h-[44px] px-6 py-3 mt-2 bg-[#0099ff] text-white text-[14px] font-medium leading-none rounded-lg transition-colors duration-200 hover:bg-[#0088ee] no-underline"
         >
           Back to Home
         </a>
       </main>
-
-      {/* Hidden system component tracker as seen in DOM */}
-      <div id="component-2m27a9x7wft" className="hidden"></div>
     </div>
   );
 };
 
-export default NotFound;
+export default NotFoundSection;
