@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -6,62 +6,61 @@
 
 @theme {
   --color-background: #ffffff;
-  --color-foreground: #333333;
+  --color-foreground: #000000;
 
   --color-card: #ffffff;
-  --color-card-foreground: #333333;
+  --color-card-foreground: #000000;
 
   --color-popover: #ffffff;
-  --color-popover-foreground: #333333;
+  --color-popover-foreground: #000000;
 
-  --color-primary: #2996f5;
+  --color-primary: #30A2FF;
   --color-primary-foreground: #ffffff;
 
-  --color-secondary: #e9f5ff;
-  --color-secondary-foreground: #2996f5;
+  --color-secondary: #F0F7FF;
+  --color-secondary-foreground: #30A2FF;
 
-  --color-muted: #f9fafb;
+  --color-muted: #F3F4FB;
   --color-muted-foreground: #666666;
 
-  --color-accent: #ebfaf2;
-  --color-accent-foreground: #333333;
+  --color-accent: #F1FAF5;
+  --color-accent-foreground: #000000;
 
   --color-destructive: #ef4444;
   --color-destructive-foreground: #fafafa;
 
-  --color-border: #e5e7eb;
-  --color-input: #e5e7eb;
-  --color-ring: #2996f5;
+  --color-border: #E5E7EB;
+  --color-input: #E5E7EB;
+  --color-ring: #30A2FF;
 
-  --color-chart-1: #2996f5;
+  --color-chart-1: #30A2FF;
   --color-chart-2: #10b981;
   --color-chart-3: #f59e0b;
   --color-chart-4: #8b5cf6;
   --color-chart-5: #ef4444;
 
   --color-sidebar: #ffffff;
-  --color-sidebar-foreground: #333333;
-  --color-sidebar-primary: #2996f5;
+  --color-sidebar-foreground: #404040;
+  --color-sidebar-primary: #30A2FF;
   --color-sidebar-primary-foreground: #ffffff;
-  --color-sidebar-accent: #e9f5ff;
-  --color-sidebar-accent-foreground: #2996f5;
-  --color-sidebar-border: #e5e7eb;
-  --color-sidebar-ring: #2996f5;
+  --color-sidebar-accent: #F0F7FF;
+  --color-sidebar-accent-foreground: #30A2FF;
+  --color-sidebar-border: #E5E7EB;
+  --color-sidebar-ring: #30A2FF;
 
-  --color-footer: #000000;
-  --color-footer-foreground: #ffffff;
-  --color-brand-blue: #2996f5;
-  --color-brand-light-blue: #e9f5ff;
-  --color-brand-green-wash: #ebfaf2;
+  --color-hero-bg: #F0F7FF;
+  --color-feature-lavender: #F3F4FB;
+  --color-feature-mint: #F1FAF5;
+  --color-testimonial-bg: #F1FDF6;
+  --color-footer-bg: #000000;
 
-  --font-display: "Montserrat", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  --radius-lg: 0.5rem;
-  --radius-md: calc(0.5rem - 2px);
-  --radius-sm: calc(0.5rem - 4px);
-  --radius-section: 40px;
-  --radius-card: 32px;
+  --radius-lg: 32px;
+  --radius-md: 16px;
+  --radius-sm: 8px;
+  --radius-pill: 100px;
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
@@ -90,30 +89,30 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: #e5e7eb;
+    border-color: #E5E7EB;
   }
 
   :root {
     --background: #ffffff;
-    --foreground: #333333;
+    --foreground: #000000;
     --card: #ffffff;
-    --card-foreground: #333333;
+    --card-foreground: #000000;
     --popover: #ffffff;
-    --popover-foreground: #333333;
-    --primary: #2996f5;
+    --popover-foreground: #000000;
+    --primary: #30A2FF;
     --primary-foreground: #ffffff;
-    --secondary: #e9f5ff;
-    --secondary-foreground: #2996f5;
-    --muted: #f9fafb;
+    --secondary: #F0F7FF;
+    --secondary-foreground: #30A2FF;
+    --muted: #F3F4FB;
     --muted-foreground: #666666;
-    --accent: #ebfaf2;
-    --accent-foreground: #333333;
+    --accent: #F1FAF5;
+    --accent-foreground: #000000;
     --destructive: #ef4444;
     --destructive-foreground: #fafafa;
-    --border: #e5e7eb;
-    --input: #e5e7eb;
-    --ring: #2996f5;
-    --radius: 0.5rem;
+    --border: #E5E7EB;
+    --input: #E5E7EB;
+    --ring: #30A2FF;
+    --radius: 32px;
   }
 
   html {
@@ -121,29 +120,32 @@
   }
 
   body {
-    font-family: var(--font-body);
+    font-family: var(--font-sans);
     background-color: var(--background);
     color: var(--foreground);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     line-height: 1.6;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
-    font-weight: 700;
-    color: #333333;
-    line-height: 1.1;
   }
 
   h1 {
     font-size: 4.5rem;
     font-weight: 800;
+    line-height: 1.1;
     letter-spacing: -0.04em;
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
     letter-spacing: -0.02em;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.3;
   }
 
   .container {
@@ -155,29 +157,36 @@
     padding-right: 1.5rem;
   }
 
-  .font-display {
-    font-family: var(--font-display);
+  .text-gradient {
+    background: linear-gradient(90deg, #30A2FF 0%, #70C1FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  .font-body {
-    font-family: var(--font-body);
+  .bento-card {
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .section-padding {
-    padding-top: 120px;
-    padding-bottom: 120px;
+  .bento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
   }
 
-  .glass-card {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
   }
 
-  .grid-mesh {
-    background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
-    background-size: 40px 40px;
+  .btn-pill {
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.2s ease;
   }
 }
 
