@@ -1,45 +1,44 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
+  const pathname = usePathname();
+
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'Pricing', href: '/pricing' },
+    { name: 'Extension', href: '/extension' },
+    { name: 'Help', href: '/help' },
+    { name: 'Blog', href: '/blog' },
+  ];
+
+  const isActive = (href: string) => {
+    if (href === '/') return pathname === '/';
+    return pathname.startsWith(href);
+  };
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#EBEEF0] h-[72px] flex items-center">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#E5E7EB] h-[88px] flex items-center">
       <div className="container mx-auto px-10 flex items-center justify-between h-full max-w-[1240px]">
-        {/* Left Section: Menu Items */}
-        <div className="flex items-center gap-1">
-          <a
-            href="/"
-            className="px-[11px] py-[6px] text-[16px] font-medium text-[#657786] transition-colors hover:text-black rounded-[10px]"
-          >
-            Home
-          </a>
-          <a
-            href="/Pricing"
-            className="px-[11px] py-[6px] text-[16px] font-medium text-[#657786] transition-colors hover:text-black rounded-[10px]"
-          >
-            Pricing
-          </a>
-          <a
-            href="/Extension"
-            className="px-[11px] py-[6px] text-[16px] font-medium text-[#657786] transition-colors hover:text-black rounded-[10px]"
-          >
-            Extension
-          </a>
-          <a
-            href="#"
-            className="px-[11px] py-[6px] text-[16px] font-medium text-[#657786] transition-colors hover:text-black rounded-[10px]"
-          >
-            Help
-          </a>
-          <a
-            href="/blog"
-            className="px-[11px] py-[6px] text-[16px] font-medium text-black bg-[#F4F4F7] transition-colors rounded-[10px]"
-          >
-            Blog
-          </a>
+        <div className="flex items-center gap-1 bg-[#F3F4F6] rounded-full p-1.5">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className={`px-4 py-2 text-[14px] font-medium transition-colors rounded-full ${
+                isActive(link.href)
+                  ? 'bg-white text-black shadow-sm'
+                  : 'text-[#666666] hover:text-black'
+              }`}
+            >
+              {link.name}
+            </a>
+          ))}
         </div>
 
-        {/* Center: Logo */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <a href="/" className="flex items-center">
             <Image
@@ -53,17 +52,16 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* Right Section: CTAs */}
         <div className="flex items-center gap-3">
           <a
-            href="https://chrome.google.com/webstore/detail/marqly/kcadneobjofkppmekgadodnaojoehemc/"
-            className="px-5 py-[10px] text-[15px] font-semibold text-black border border-[#EBEEF0] rounded-[8px] transition-colors hover:bg-[#F7F9FB]"
+            href="https://chrome.google.com/webstore/detail/marqly"
+            className="px-5 py-[10px] text-[14px] font-semibold text-black border border-[#E5E7EB] rounded-full transition-colors hover:bg-[#F9FAFB]"
           >
             Install Extension
           </a>
           <a
             href="https://app.marqly.com"
-            className="px-5 py-[10px] text-[15px] font-semibold text-white bg-[#1DA1F2] rounded-[8px] transition-opacity hover:opacity-90 shadow-sm"
+            className="px-5 py-[10px] text-[14px] font-semibold text-white bg-[#30A2FF] rounded-full transition-opacity hover:opacity-90 shadow-[0_4px_14px_rgba(48,162,255,0.3)]"
           >
             Sign in
           </a>
