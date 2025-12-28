@@ -6,19 +6,19 @@
 
 @theme {
   --color-background: #ffffff;
-  --color-foreground: #111111;
+  --color-foreground: #333333;
 
   --color-card: #ffffff;
-  --color-card-foreground: #111111;
+  --color-card-foreground: #333333;
 
   --color-popover: #ffffff;
-  --color-popover-foreground: #111111;
+  --color-popover-foreground: #333333;
 
   --color-primary: #0099ff;
   --color-primary-foreground: #ffffff;
 
   --color-secondary: #f5f5f5;
-  --color-secondary-foreground: #111111;
+  --color-secondary-foreground: #333333;
 
   --color-muted: #f5f5f5;
   --color-muted-foreground: #666666;
@@ -40,7 +40,7 @@
   --color-chart-5: #e74c3c;
 
   --color-sidebar: #ffffff;
-  --color-sidebar-foreground: #111111;
+  --color-sidebar-foreground: #333333;
   --color-sidebar-primary: #0099ff;
   --color-sidebar-primary-foreground: #ffffff;
   --color-sidebar-accent: #f0f0f0;
@@ -89,15 +89,15 @@
 @layer base {
   :root {
     --background: #ffffff;
-    --foreground: #111111;
+    --foreground: #333333;
     --card: #ffffff;
-    --card-foreground: #111111;
+    --card-foreground: #333333;
     --popover: #ffffff;
-    --popover-foreground: #111111;
+    --popover-foreground: #333333;
     --primary: #0099ff;
     --primary-foreground: #ffffff;
     --secondary: #f5f5f5;
-    --secondary-foreground: #111111;
+    --secondary-foreground: #333333;
     --muted: #f5f5f5;
     --muted-foreground: #666666;
     --accent: #0099ff;
@@ -109,7 +109,7 @@
     --ring: #0099ff;
     --radius: 8px;
     --sidebar-background: #ffffff;
-    --sidebar-foreground: #111111;
+    --sidebar-foreground: #333333;
     --sidebar-primary: #0099ff;
     --sidebar-primary-foreground: #ffffff;
     --sidebar-accent: #f0f0f0;
@@ -131,33 +131,34 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--background);
+    color: var(--foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
   }
 
   h1 {
     font-size: 18px;
     font-weight: 600;
-    line-height: 1.2;
-    color: #111111;
-    margin-top: 20px;
-    margin-bottom: 8px;
+    line-height: 1.4;
+    color: #333333;
+    margin: 0;
     text-align: center;
   }
 
   p {
     font-size: 14px;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.6;
     color: #666666;
     text-align: center;
-    max-width: 400px;
-    margin-bottom: 24px;
+    max-width: 320px;
+    margin: 0;
   }
 
   .container {
@@ -165,31 +166,44 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    gap: 16px;
+    padding: 20px;
     max-width: 400px;
-    padding: 1rem;
+    width: 100%;
+    text-align: center;
   }
 
   .btn-primary {
-    background-color: #0099ff;
-    color: #ffffff;
-    padding: 10px 20px;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    padding: 12px 24px;
     border-radius: 8px;
     font-size: 14px;
     font-weight: 500;
     line-height: 1;
+    transition: background-color 0.2s ease;
     text-decoration: none;
-    display: inline-block;
-    transition: opacity 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    margin-top: 8px;
   }
 
   .btn-primary:hover {
-    opacity: 0.9;
+    background-color: #0088ee;
   }
 
   .logo-wrapper {
+    margin-bottom: 8px;
     display: flex;
     justify-content: center;
-    color: #111111;
+    color: #000000;
+  }
+
+  .logo-wrapper svg {
+    width: 14px;
+    height: 21px;
   }
 }
